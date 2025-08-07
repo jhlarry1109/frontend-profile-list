@@ -87,7 +87,7 @@ export default function ProfileModify() {
         <p><b><span>Image </span></b>
           <input type="radio" name='Image' value="default" checked={data.Image === 'default'} onChange={change} />Default
           <b></b>
-          <input type="radio" name='Image' value="reverse" checked={data.Image === 'default'} onChange={change} />Reverse
+          <input type="radio" name='Image' value="reverse" checked={data.Image === 'reverse'} onChange={change} />Reverse
         </p>
         <button type='submit'>수정완료</button>
       </form>
