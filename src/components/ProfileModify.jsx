@@ -84,8 +84,8 @@ export default function ProfileModify() {
         <input type="text" ref={phoneRef} name='Phone' value={data.Phone} onChange={change} placeholder='ex) 010-8888-4444' />
         <input type="text" ref={emailRef} name='Email' value={data.Email} onChange={change} placeholder='ex) paradox@gmail.com' />
         <div>
-          <input type="radio" name='Image' value="default" onChange={change}/>
-          <input type="radio" name='Image' value="reverse" onChange={change}/>
+          <input type="radio" name='Image' value="default" checked={data.Image === 'default'} onChange={change}/>
+          <input type="radio" name='Image' value="reverse" checked={data.Image === 'reverse'} onChange={change}/>
         </div>
         <button type='submit'>수정완료</button>
       </form>
