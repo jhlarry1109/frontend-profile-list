@@ -13,15 +13,14 @@ function App() {
 
   return (
     <BrowserRouter>
+      <Header />
       <div className='container'>
         <Routes>
-          <Route path='/' element={<Home />}>
-            <Header />
-          </Route>
+          <Route path='/' element={<Home />} />
           <Route path='/profiles' element={<ProfileLayout profiles={profiles} setProfiles={setProfiles}/>}>
-            <Route path='list' element={<ProfileList profiles={profiles} />} />
-            <Route path='new' element={<ProfileForm profiles={profiles} setProfiles={setProfiles}/>} />
-            <Route path='modify/:id' element={<ProfileModify profiles={profiles} setProfiles={setProfiles}/>} />
+            <Route path='list' element={<ProfileList />} />
+            <Route path='new' element={<ProfileForm />} />
+            <Route path='modify/:id' element={<ProfileModify />} />
           </Route>
         </Routes>
       </div>

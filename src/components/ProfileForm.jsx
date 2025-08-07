@@ -1,7 +1,9 @@
 import { useState, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 
-export default function ProfileForm({ profiles, setProfiles }) {
+export default function ProfileForm() {
+  const { profiles, setProfiles } = useOutletContext();
   const navigate = useNavigate();
   const [data, setData] = useState({
     Name: '',
@@ -24,6 +26,8 @@ export default function ProfileForm({ profiles, setProfiles }) {
   }
 
   const Submit = (e) => {
+    e.preventDefault();
+    
     if (!data.Name) {
       alert('이름을 입력하세요');
       nameRef.current.focus();
