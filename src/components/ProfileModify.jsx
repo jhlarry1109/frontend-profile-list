@@ -15,7 +15,7 @@ export default function ProfileModify() {
     Job: profile.job,
     Phone: profile.tel,
     Email: profile.email,
-    Image: profile.imgUrl.inclueds('default') ? 'default' : 'reverse'
+    Image: profile.imgUrl.includes('default') ? 'default' : 'reverse'
   });
 
   const nameRef = useRef(null);
