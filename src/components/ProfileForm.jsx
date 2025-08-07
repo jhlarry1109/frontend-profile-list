@@ -11,7 +11,7 @@ export default function ProfileForm() {
     Job: '',
     Phone: '',
     Email: '',
-    Image: 'default'
+    Image: ''
   });
 
   const nameRef = useRef(null);
@@ -51,6 +51,10 @@ export default function ProfileForm() {
     if(!data.Email) {
       alert('이메일을 입력하세요');
       emailRef.current.focus();
+      return;
+    }
+    if(!data.Image) {
+      alert('사진을 선택하세요');
       return;
     }
     
