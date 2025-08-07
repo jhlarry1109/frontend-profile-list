@@ -27,7 +27,7 @@ export default function ProfileForm() {
 
   const Submit = (e) => {
     e.preventDefault();
-    
+
     if (!data.Name) {
       alert('이름을 입력하세요');
       nameRef.current.focus();
@@ -62,7 +62,7 @@ export default function ProfileForm() {
       job: data.Job,
       tel: data.Phone,
       email: data.Email,
-      imgUrl: data.Image === 'default' ? '/assets/PARADOX_default.png' : '/assets/PARADOX_reverse.png'
+      imgUrl: data.Image === 'default' ? '/src/assets/PARADOX_default.png' : '/src/assets/PARADOX_reverse.png'
     };
 
     setProfiles([...profiles, newProfile]);
@@ -73,17 +73,18 @@ export default function ProfileForm() {
   return (
     <div className='container'>
       <h1>프로필 카드 만들기</h1>
-      <form onSubmit={Submit}>
+      <form onSubmit={Submit} className='inputBox'>
         <h2>정보를 입력해주세요.</h2>
-        <input type="text" ref={nameRef} name='Name' value={data.Name} onChange={change} placeholder='ex) 이주환' />
-        <input type="text" ref={teamRef} name='Team' value={data.Team} onChange={change} placeholder='ex) PARADOX' />
-        <input type="text" ref={jobRef} name='Job' value={data.Job} onChange={change} placeholder='ex) Frontend Developer' />
-        <input type="text" ref={phoneRef} name='Phone' value={data.Phone} onChange={change} placeholder='ex) 010-8888-4444' />
-        <input type="text" ref={emailRef} name='Email' value={data.Email} onChange={change} placeholder='ex) paradox@gmail.com' />
-        <div>
-          <input type="radio" name='Image' value="default" onChange={change}/>
-          <input type="radio" name='Image' value="reverse" onChange={change}/>
-        </div>
+        <p><b><span>Name </span></b><input type="text" ref={nameRef} name='Name' value={data.Name} onChange={change} placeholder='ex) 이주환' /></p>
+        <p><b><span>Team </span></b><input type="text" ref={teamRef} name='Team' value={data.Team} onChange={change} placeholder='ex) PARADOX' /></p>
+        <p><b><span>Job </span></b><input type="text" ref={jobRef} name='Job' value={data.Job} onChange={change} placeholder='ex) Frontend Developer' /></p>
+        <p><b><span>Phone </span></b><input type="text" ref={phoneRef} name='Phone' value={data.Phone} onChange={change} placeholder='ex) 010-8888-4444' /></p>
+        <p><b><span>Email </span></b><input type="text" ref={emailRef} name='Email' value={data.Email} onChange={change} placeholder='ex) paradox@gmail.com' /></p>
+        <p><b><span>Image </span></b>
+          <input type="radio" name='Image' value="default" onChange={change}/>Default
+          <b></b>
+          <input type="radio" name='Image' value="reverse" onChange={change}/>Reverse
+        </p>
         <button type='submit'>등록하기</button>
       </form>
     </div>

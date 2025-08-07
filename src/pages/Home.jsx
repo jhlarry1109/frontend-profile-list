@@ -12,8 +12,9 @@ export default function Home() {
 
   const list = textList.map(li => <li key={li}>{li}</li>)
   return (
-    <div>
+    <div className='container'>
       <Outlet />
+      <h1 className='title'>프로필 카드 리스트 만들기</h1>
       <ul>
         {list}
       </ul>

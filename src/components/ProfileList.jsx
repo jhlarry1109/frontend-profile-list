@@ -5,12 +5,15 @@ export default function ProfileList() {
   const { profiles, setProfiles } = useOutletContext();
 
   return (
-    <ul>
-      {profiles.map(profile => (
-        <li key={profile.id}>
-          <ProfileCard profile={profile} setProfiles={setProfiles} />
-        </li>
-      ))}
-    </ul>
+    <div>
+      <h1>프로필 카드 목록</h1>
+      <ul className='cardContainer'>
+        {profiles.map(profile => (
+          <li key={profile.id}>
+            <ProfileCard profile={profile} setProfiles={setProfiles} />
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }

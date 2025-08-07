@@ -1,0 +1,129 @@
+h1 {
+  margin: 1em 0;
+}
+
+.cardContainer li {
+  list-style: none;
+}
+
+.cardContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  gap: 16px;
+}
+
+.card {
+  width: 90%;
+  height: 11em;
+  margin: 0 auto;
+  background-color: beige;
+  border-radius: 16px;
+  border: 1px solid black;
+  display: flex;
+  gap: 0.5em;
+  padding: 1em;
+  box-sizing: border-box;
+}
+
+.introBtnBox {
+  width: 100%;
+}
+
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 80%;
+}
+
+img {
+  height: 80%;
+}
+
+.imageName {
+  width: 7em;
+  height: 100%;
+}
+
+.btns {
+  height: 20%;
+  width: 90%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+button {
+  height: 2em;
+  width: 3em;
+}
+
+.modifyBtn {
+  background-color: #90a3ff;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.deleteBtn {
+  background-color: #ff9090;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+
+.inputBox {
+  padding: 1em;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 0 auto;
+  width: 90%;
+  background-color: beige;
+  border-radius: 16px;
+  border: 1px solid black;
+}
+
+.inputBox h2 {
+  text-align: start;
+}
+
+.inputBox p {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 2em;
+  font-size: large;
+}
+
+.inputBox b {
+  width: 3.5em;
+  text-align: start;
+}
+
+.inputBox input[type="text"] {
+  flex: 1;
+  height: 2em;
+  font-size: 1em;
+  padding-left: 0.5em;
+}
+
+.inputBox input[type="radio"] {
+  flex: 0;
+  width: auto;
+  height: auto;
+  padding-left: 0;
+}
+
+.inputBox button[type="submit"] {
+  width: 100%;
+  background-color: #74e474;
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 3em;
+  font-size: large;
+  font-weight: 700;
+}
