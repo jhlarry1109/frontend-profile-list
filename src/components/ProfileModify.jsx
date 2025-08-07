@@ -30,6 +30,8 @@ export default function ProfileModify() {
   }
 
   const Submit = (e) => {
+    e.preventDefault();
+
     if (!data.Name) {
       alert('이름을 입력하세요');
       nameRef.current.focus();
@@ -57,7 +59,7 @@ export default function ProfileModify() {
     }
     
     const updateProfile = {
-      id: id,
+      id: parseInt(id),
       name: data.Name,
       team: data.Team,
       job: data.Job,
@@ -66,9 +68,9 @@ export default function ProfileModify() {
       imgUrl: data.Image === 'default' ? '/assets/PARADOX_default.png' : '/assets/PARADOX_reverse.png'
     };
 
-    setProfiles(prev => prev.map(p => p.id === id ? updateProfile : p));
+    setProfiles(prev => prev.map(p => p.id === parseInt(id) ? updateProfile : p));
 
-    navigate('../list');
+    navigate('/profiles/list');
   };
 
   return (
