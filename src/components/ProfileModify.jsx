@@ -33,27 +33,27 @@ export default function ProfileModify() {
     e.preventDefault();
 
     if (!data.Name) {
-      alert('이름을 입력하세요');
+      alert('이름이 입력되지 않았습니다!');
       nameRef.current.focus();
       return;
     }
     if(!data.Team) {
-      alert('팀명을 입력하세요');
+      alert('팀이 입력되지 않았습니다!');
       teamRef.current.focus();
       return;
     }
     if(!data.Job) {
-      alert('직업을 입력하세요');
+      alert('직책이 입력되지 않았습니다!');
       jobRef.current.focus();
       return;
     }
     if(!data.Phone) {
-      alert('전화번호를 입력하세요');
+      alert('전화번호가 입력되지 않았습니다!');
       phoneRef.current.focus();
       return;
     }
     if(!data.Email) {
-      alert('이메일을 입력하세요');
+      alert('이메일이 입력되지 않았습니다!');
       emailRef.current.focus();
       return;
     }
