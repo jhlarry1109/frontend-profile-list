@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProfileForm({ profiles, setProfiles }) {
+  const navigate = useNavigate();
   const [data, setData] = useState({
     Name: '',
     Team: '',
@@ -54,27 +56,21 @@ export default function ProfileForm({ profiles, setProfiles }) {
       name: data.Name,
       team: data.Team,
       job: data.Job,
-      tel: data.Tel,
+      tel: data.Phone,
       email: data.Email,
       imgUrl: data.Image === 'default' ? '/assets/PARADOX_default.png' : '/assets/PARADOX_reverse.png'
     };
 
     setProfiles([...profiles, newProfile]);
 
-    setData({
-      Name: '',
-      Team: '',
-      Job: '',
-      Phone: '',
-      Email: '',
-      Image: 'default'
-    });
+    navigate('../list')
   };
 
   return (
     <div className='container'>
       <h1>프로필 카드 만들기</h1>
       <form onSubmit={Submit}>
+        <h2>정보를 입력해주세요.</h2>
         <input type="text" ref={nameRef} name='Name' value={data.Name} onChange={change} placeholder='ex) 이주환' />
         <input type="text" ref={teamRef} name='Team' value={data.Team} onChange={change} placeholder='ex) PARADOX' />
         <input type="text" ref={jobRef} name='Job' value={data.Job} onChange={change} placeholder='ex) Frontend Developer' />
@@ -84,6 +80,7 @@ export default function ProfileForm({ profiles, setProfiles }) {
           <input type="radio" name='Image' value="default" onChange={change}/>
           <input type="radio" name='Image' value="reverse" onChange={change}/>
         </div>
+        <button type='submit'>등록하기</button>
       </form>
     </div>
   )
